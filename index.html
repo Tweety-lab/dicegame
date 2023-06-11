@@ -6,16 +6,31 @@
 </head>
 <body>
     <div id="button">
-        <div class="dice-container">
-            <div id="dicetop">
-                <span class="material-icons-outlined">
-                    casino
-                </span>
-            </div>
-        </div>
+        <span class="material-icons-outlined">
+            casino
+        </span>
         <button onclick="rollDice()" class="btn-roll-dice"></button>
     </div>
 
+    <div class="dice-container">
+        <div id="dicetop"></div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+        function rollDice() {
+            const diceContainer = document.querySelector(".dice-container");
+            const randomDiceNumber = Math.floor(Math.random() * 6) + 1;
+            const dice = createDice(randomDiceNumber);
+
+            const dicetop = diceContainer.querySelector("#dicetop");
+            dicetop.innerHTML = "";
+            dicetop.appendChild(dice);
+        }
+
+        window.addEventListener("DOMContentLoaded", function() {
+            rollDice();
+        });
+    </script>
 </body>
 </html>
