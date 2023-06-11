@@ -36,4 +36,8 @@ function createDice(number) {
   window.addEventListener("DOMContentLoaded", function() {
     rollDice();
   });
+
+  document.querySelector('#button').addEventListener('click', () => {
+    document.querySelector('#button').classList.add('pressed');
+  }); 
   
